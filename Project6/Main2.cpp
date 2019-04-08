@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "ex3-4.h"
+#include "ex3-5.h"
 
 int main()
 {
-	ex3_4_main();
+	ex3_5_main();
 }
