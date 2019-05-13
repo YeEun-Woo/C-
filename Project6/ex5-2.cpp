@@ -6,8 +6,8 @@ typedef int element;
 
 typedef struct stackNode {
 	element data;
-	struct stackNode*link;
-}stackNode;
+	struct stackNode *link;
+} stackNode;
 
 stackNode* top;
 
@@ -23,7 +23,7 @@ void push(element item) {
 	top = temp;
 }
 
-element pop(){
+element pop() {
 	element item;
 	stackNode* temp = top;
 
@@ -31,6 +31,7 @@ element pop(){
 		printf("\n\n Stack is empty !\n");
 		return 0;
 	}
+
 	else {
 		item = temp->data;
 		top = temp->link;
@@ -44,6 +45,7 @@ element peek() {
 		printf("\n\n Stack is empty !\n");
 		return 0;
 	}
+
 	else {
 		return(top->data);
 	}
@@ -52,34 +54,40 @@ element peek() {
 void printStack() {
 	stackNode* p = top;
 	printf("\n STACK [ ");
+
 	while (p) {
-		printf("%d", p->data);
+		printf("%d ", p->data);
 		p = p->link;
 	}
 	printf("] ");
 }
 
-void maid(void) {
+void main(void) {
 	element item;
 	top = NULL;
 	printf("\n** 연결 스택 연산 **\n");
 	printStack();
-	push(1);  printStack();
-	push(2);  printStack();
-	push(3);  printStack();
 
+	push(1); printStack();
+	push(2); printStack();
+	push(3); printStack();
+	push(4); printStack();
 
 	item = peek(); printStack();
 	printf("peek => %d", item);
 
 	item = pop(); printStack();
-	printf("\t pop => %d", item);
+	printf("t pop => %d", item);
 
 	item = pop(); printStack();
-	printf("\t pop => %d", item);
+	printf("t pop => %d", item);
 
 	item = pop(); printStack();
-	printf("\t pop => %d", item);
+	printf("t pop => %d", item);
+
+	item = pop(); printStack();
+	printf("t pop => %d", item);
 
 	getchar();
+
 }
